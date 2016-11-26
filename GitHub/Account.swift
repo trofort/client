@@ -18,4 +18,18 @@ class Account {
     }
     
     var git: GitHub!
+    var repositories: Response!
+}
+
+class Repositpry {
+    var name = ""
+    var owner = ""
+    var date = ""
+    var descripton = ""
+    
+    init(json: [NSDictionary]) {
+        self.name = json["name"] as! String
+        self.owner = (json["owner"] as! NSDictionary)["login"] as! String
+        self.date = json[""]
+    }
 }

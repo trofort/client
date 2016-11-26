@@ -34,6 +34,10 @@ struct GitHub {
                     
                     return
                 }
+                do {
+                    let json: [NSDictionary] = try NSJSONSerialization.JSONObjectWithData(response.data, options: NSJSONReadingOptions.MutableContainers) as! [NSDictionary]
+                    print(json)
+                } catch {}
                 print(String(data: response.data, encoding: NSUTF8StringEncoding))
                 completionHandler(true)
             }
